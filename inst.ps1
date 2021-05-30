@@ -6,7 +6,6 @@
 $title = 'WinGet Auto-Install'
 $question = 'You Have already installed WinGet?'
 $choices = '&Yes', '&No'
-$fileSoft = get-content soft.txt
 # End var #
 
 function InstallSoftware {
