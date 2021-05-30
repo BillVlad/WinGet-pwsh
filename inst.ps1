@@ -24,11 +24,12 @@ if ($decision -eq 0) {
     # Source file location
     $source = 'https://github.com/microsoft/winget-cli/releases/download/v1.0.11451/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle'
     # Destination to save the file
-    $destination = 'c:\winget.appxbundle'
-    Invoke-WebRequest -Uri $source -OutFile $destination
+    $our = 'c:\winget.appxbundle'
+    Invoke-WebRequest -Uri $source -OutFile $out
     echo 'We download WinGet'
     Start-Sleep -Seconds 3
-    Add-AppxPackage $destination
+    Add-AppxPackage $out
+    Remove-Item $out
     clear | echo 'Installing software...'
     InstallSoftware
     Host-clear
